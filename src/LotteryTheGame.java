@@ -19,7 +19,7 @@ public class LotteryTheGame {
         }
         return winning;
     }
-
+    // ------Matcher tal------
     public static int calculateMatches(Set<Integer> ticket, Set<Integer> winning) {
         Set<Integer> matches = new TreeSet<>(ticket);
         matches.retainAll(winning);

@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class LottoGUI {
 
-    public static void createAndShowGIU()
+    public static void createAndShowGUI()
 
     {
         JFrame frame = new JFrame("Lotto");
@@ -13,8 +13,7 @@ public class LottoGUI {
         frame.setSize(500, 400);
         frame.setLayout(new BorderLayout());
 
-        JPanel inputPanel =  new JPanel();
-        inputPanel.setLayout(new FlowLayout());
+        JPanel inputPanel =  new JPanel(new FlowLayout());
 
         //------6 felter til indtastning af tal------
         JTextField[] numberFields = new JTextField[6];
@@ -23,7 +22,12 @@ public class LottoGUI {
             inputPanel.add(new JLabel("Tal " +  (i+1) + ": "));
             inputPanel.add(numberFields[i]);
         }
+        //------panel til træk-knap så den er synlig------
+        JPanel buttonPanel = new JPanel(new FlowLayout());
         JButton drawButton = new JButton("Træk tal: ");
+        buttonPanel.add(drawButton);
+
+        //------Output area------
         JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(textArea);
@@ -53,7 +57,7 @@ public class LottoGUI {
 
                 guiOutput.displayMsg("Din lotteriseddel: " + ticket);
                 guiOutput.displayMsg("Vindertal: " + winning);
-                guiOutput.displayMsg("Antal matches" + matches);
+                guiOutput.displayMsg("Antal matches: " + matches);
                 guiOutput.displayMsg("Gevinst: " + prize + " kr");
 
             } catch (NumberFormatException ex) {
@@ -61,8 +65,8 @@ public class LottoGUI {
             }
         });
         frame.add(inputPanel, BorderLayout.NORTH);
-        frame.add(inputPanel, BorderLayout.CENTER);
-        frame.add(inputPanel, BorderLayout.SOUTH);
+        frame.add(scrollPane, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
 
         frame.setVisible(true);
 

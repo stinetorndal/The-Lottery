@@ -15,7 +15,7 @@ public class Queries {
             SELECT n5 FROM results
             UNION ALL
             SELECT n6 FROM results
-            }
+            ) 
             GROUP BY number
             ORDER BY frequency DESC
             LIMIT 4;
