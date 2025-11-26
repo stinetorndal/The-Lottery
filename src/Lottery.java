@@ -12,7 +12,7 @@ public class Lottery {
         System.out.println("2. GUI");
         System.out.println("3. Vis statistik");
         System.out.println("4. Afslut");
-        System.out.println("Vælg en af mulighederne NU:");
+        System.out.println("Vælg en af mulighederne:");
 
         int choice = scanner.nextInt();
 
@@ -22,7 +22,7 @@ public class Lottery {
             case 3 -> showStatistics();
             case 4 -> {
                 System.out.println("Farvel og tak for i dag!!");
-                return;
+                System.exit(0);
             }
             default -> System.out.println   ("Ugyldigt valg, du er retarderet og programmet afsluttes.");
         }

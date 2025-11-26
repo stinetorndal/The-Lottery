@@ -25,6 +25,8 @@ public class LottoStats {
 
     //------Returnerer antal trækninger / en enkelt talværdi------
     public static int getSingleValue(String sql, String columnLabel) {
+
+        //------Bemærk Conncection, Statement og Resultset------
         try (Connection connection = DB.getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {

@@ -20,7 +20,7 @@ public class TextUI {
             Set<Integer> ticket = LotteryTheGame.getTicket(console);
             Set<Integer> winning = LotteryTheGame.createWinningNumbers();
 
-            LottoDAO.saveWinningNumbers(winning);
+            SaveNumbersInDB.saveWinningNumbers(winning);
             int matches = LotteryTheGame.calculateMatches(ticket, winning);
             int prize = LotteryTheGame.calculatePrize(matches);
 

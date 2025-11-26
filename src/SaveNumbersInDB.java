@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.Set;
 
-public class LottoDAO {
+public class SaveNumbersInDB {
     private static final String INSERT_SQL =
             "INSERT INTO results (n1, n2, n3, n4, n5, n6) VALUES (?, ?, ?, ?, ?, ?)";
 
