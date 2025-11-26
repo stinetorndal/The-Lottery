@@ -27,6 +27,9 @@ public class LotteryTheGame {
     }
     //------Beregning af gevinst------
     public static int calculatePrize(int matches) {
+        if (matches < 2) {
+            return 0;
+        }
         return (int) (PRIZE * Math.pow(2, matches));
     }
 
@@ -37,7 +40,7 @@ public class LotteryTheGame {
             int number = console.nextInt();
             ticket.add(number);
         }
-
+        console.nextLine();
         return ticket;
     }
 

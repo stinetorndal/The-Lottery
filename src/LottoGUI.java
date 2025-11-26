@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class LottoGUI {
 
@@ -35,7 +36,7 @@ public class LottoGUI {
         GUIOutputHandler guiOutput = new GUIOutputHandler(textArea);
 
         drawButton.addActionListener( e -> {
-            Set<Integer>ticket = new HashSet<>();
+            Set<Integer>ticket = new TreeSet<>();
             try {
                 for (JTextField field: numberFields) {
                     int num = Integer.parseInt(field.getText());

@@ -14,10 +14,18 @@ public class Lottery {
         System.out.println("4. Afslut");
         System.out.println("Vælg en af mulighederne:");
 
-        int choice = scanner.nextInt();
+        String line = scanner.nextLine();
+        int choice;
+
+        try {
+            choice = Integer.parseInt(line);
+        } catch (NumberFormatException  e){
+            System.out.println("Ugyldigt input, skriv et tal");
+            continue;
+        }
 
         switch (choice){
-            case 1 -> new TextUI().play();
+            case 1 -> new TextUI(scanner).play();
             case 2 -> LottoGUI.createAndShowGUI();
             case 3 -> showStatistics();
             case 4 -> {
